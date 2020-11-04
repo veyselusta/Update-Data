@@ -1,9 +1,16 @@
-import React from "react";
+import React , {useState} from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
 
 export default function App() {
+    const [name , setName] = useState("")
+    const [age , setAge] = useState(0)
+
+    const changeName = (e)=>{setName(e.target.value)}
+
+    const changeAge = (e)=>{setAge(+e.target.value)}
+
 
   return (
     <div className="App">
@@ -13,8 +20,8 @@ export default function App() {
 
       {/* Display Data */}
       <div className="input-display">
-        <p>Display Name: </p>
-        <p>Display Age: </p>
+        <p>Display Name:{name} </p>
+        <p>Display Age:{age} </p>
       </div>
 
       {/* Collect User Inputs */}
@@ -22,16 +29,15 @@ export default function App() {
         {/* Input name */}
         <div className="field">
           <label className="label">Name: </label>
-          <input className="input" type="text" placeholder="William" />
+          <input onChange={changeName} className="input" type="text" placeholder="William" />
         </div>
 
         {/* Input age */}
         <div className="field">
           <label className="label">Age: </label>
-          <input className="input" type="number" placeholder="38" />
+          <input onChange={changeAge} className="input" type="number" placeholder="38" />
         </div>
       </div>
-      <ScotchInfoBar seriesNumber="3" />
     </div>
   );
 }
