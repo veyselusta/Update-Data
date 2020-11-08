@@ -18,13 +18,11 @@ export default function App() {
         <h2 className="subtitle is-4">Update Data from an input</h2>
       </div>
 
-      {/* Display Data */}
       <div className="input-display">
         <p>Display Name:{name} </p>
         <p>Display Age:{age} </p>
       </div>
 
-      {/* Collect User Inputs */}
       <div className="inputs">
         {/* Input name */}
         <div className="field">
@@ -32,7 +30,6 @@ export default function App() {
           <input onChange={changeName} className="input" type="text" placeholder="William" />
         </div>
 
-        {/* Input age */}
         <div className="field">
           <label className="label">Age: </label>
           <input onChange={changeAge} className="input" type="number" placeholder="38" />
